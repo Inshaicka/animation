@@ -1,0 +1,96 @@
+/* Стили для навигации */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Стили для разделов */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about, .services, .contact {
+    background-color: #f4f4f4;
+}
+
+/* Анимация для текстовых блоков - слева */
+@keyframes slideInLeft{
+    0%{
+        transform: translateX(-10%);
+        opacity: 0;
+    }100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight{
+    0%{
+        transform: translateX(10%);
+        opacity: 0;
+    }100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Стили для текстовых блоков */
+.content-block {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    display: none;
+    padding: 20px;
+}
+
+/* Показываем текстовые блоки при скроллинге */
+.visible .content-block {
+    display: block;
+}
+
+/* Применяем анимацию слева для нечетных блоков и справа для четных блоков */
+.visible .content-block:nth-child(odd) {
+    animation-name: slideInLeft;
+}
+
+.visible .content-block:nth-child(even) {
+    animation-name: slideInRight;
+}
+
+/* Стили для контактной формы */
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.contact-form input, .contact-form button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
